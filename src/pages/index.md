@@ -1,20 +1,27 @@
 ---
+Subhead:
+  image: /img/banner2.png
+  title: Who We Are ?
+  description: The Platform is a software that acts as an intermediary between the
+    employer and the contractor to coordinate and hire through this platform.
+    You can find the service categories available on the platform to meet your
+    needs efficiently, at affordable prices and with reliability.
 templateKey: index-page
-title: Great coffee with a conscience.
-image: /img/home-jumbotron.jpg
-heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+image: /img/headerbanner.png
+heading: One for all  service, for your  better life
+subheading: An effective medium for working people. and employers here Platform
+subhead:
+  image: /img/banner2.png
+  description: The Platform is a software that acts as an intermediary between the
+    employer and the contractor to coordinate and hire through this platform.
+    You can find the service categories available on the platform to meet your
+    needs efficiently, at affordable prices and with reliability.
+  title: Who We Are ?
 mainpitch:
   title: Why Kaldi
   description: >
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
-description: Kaldi is the ultimate spot for coffee lovers who want to learn
-  about their java’s origin and support the farmers that grew it. We take coffee
-  production, roasting and brewing seriously and we’re glad to pass that
-  knowledge to anyone.
+    Kaldi is the coffee store for everyone
+     who believes that great coffee shouldn't just taste good, it should do good too. We source all of our beans directly from small scale sustainable farmers and make sure part of the profits are reinvested in their communities.
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -50,6 +57,11 @@ intro:
     java’s origin and support the farmers that grew it. We take coffee
     production, roasting and brewing seriously and we’re glad to pass that
     knowledge to anyone. This is an edit via identity...
+title: Great coffee with a conscience.
+description: Kaldi is the ultimate spot for coffee lovers who want to learn
+  about their java’s origin and support the farmers that grew it. We take coffee
+  production, roasting and brewing seriously and we’re glad to pass that
+  knowledge to anyone.
 main:
   heading: Great coffee with no compromises
   description: >

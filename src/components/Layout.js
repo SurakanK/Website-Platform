@@ -5,6 +5,11 @@ import Navbar from "../components/Navbar";
 import "./all.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
+import styled from "styled-components";
+
+const Main = styled.div`
+  margin-top: -80px;
+`;
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
@@ -49,7 +54,7 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Navbar />
-      <div>{children}</div>
+      <Main>{children}</Main>
       <Footer />
     </div>
   );

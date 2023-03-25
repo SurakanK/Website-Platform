@@ -7,22 +7,24 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
+import SubHeader from "../components/SubHeader";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
-  title,
   heading,
   subheading,
   mainpitch,
   description,
   intro,
+  subhead,
 }) => {
-  const heroImage = getImage(image) || image;
 
   return (
     <div>
-      <FullWidthImage img={heroImage} title={title} subheading={subheading} />
+      <FullWidthImage img={getImage(image) || image} heading={heading} subheading={subheading} />
+      <SubHeader img={getImage(subhead.image) || subhead.image} title={subhead.title} description={subhead.description}/>
+
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -93,12 +95,12 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
-        title={frontmatter.title}
         heading={frontmatter.heading}
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
+        subhead={frontmatter.subhead}
       />
     </Layout>
   );
@@ -115,35 +117,44 @@ IndexPage.propTypes = {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
-      frontmatter {
+query IndexPageTemplate {
+  markdownRemark(frontmatter: {templateKey: {eq: "index-page"}}) {
+    frontmatter {
+      title
+      image {
+        childImageSharp {
+          gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+        }
+      }
+      heading
+      subheading
+      mainpitch {
+        title
+        description
+      }
+      description
+      intro {
+        blurbs {
+          image {
+            childImageSharp {
+              gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+            }
+          }
+          text
+        }
+        heading
+        description
+      }
+      subhead {
+        description
         title
         image {
           childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            gatsbyImageData
           }
-        }
-        heading
-        subheading
-        mainpitch {
-          title
-          description
-        }
-        description
-        intro {
-          blurbs {
-            image {
-              childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
-              }
-            }
-            text
-          }
-          heading
-          description
         }
       }
     }
   }
+}
 `;
