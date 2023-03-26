@@ -17,11 +17,30 @@ subhead:
     You can find the service categories available on the platform to meet your
     needs efficiently, at affordable prices and with reliability.
   title: Who We Are ?
+strength:
+  - icon: /img/shield-check-1.png
+    title: Service Guarantee
+    description: Eliminate the problem of job abandonment, follow up, and evaluate
+      the results through the platform.
+  - icon: /img/social-network-1.png
+    title: Standardized Service
+    description: Platform Man has specialized skills to perform specific tasks.
+      Trained and standardized
+  - icon: /img/select-all-1.png
+    title: Comprehensive Service
+    description: Platform Man covering all service categories and service area
+  - icon: /img/24-hour-service-1.png
+    title: 24 hour customer service
+    description: There is a quality team to help the you and Platform Man
 mainpitch:
   title: Why Kaldi
   description: >
     Kaldi is the coffee store for everyone
      who believes that great coffee shouldn't just taste good, it should do good too. We source all of our beans directly from small scale sustainable farmers and make sure part of the profits are reinvested in their communities.
+description: Kaldi is the ultimate spot for coffee lovers who want to learn
+  about their java’s origin and support the farmers that grew it. We take coffee
+  production, roasting and brewing seriously and we’re glad to pass that
+  knowledge to anyone.
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -58,10 +77,6 @@ intro:
     production, roasting and brewing seriously and we’re glad to pass that
     knowledge to anyone. This is an edit via identity...
 title: Great coffee with a conscience.
-description: Kaldi is the ultimate spot for coffee lovers who want to learn
-  about their java’s origin and support the farmers that grew it. We take coffee
-  production, roasting and brewing seriously and we’re glad to pass that
-  knowledge to anyone.
 main:
   heading: Great coffee with no compromises
   description: >

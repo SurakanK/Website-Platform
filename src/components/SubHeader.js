@@ -1,5 +1,4 @@
 import { GatsbyImage } from "gatsby-plugin-image";
-import PropTypes from "prop-types";
 import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "./styled/globalStyle";
@@ -36,8 +35,6 @@ const Border = styled.div`
 
 const SubHeader = (props) => {
   const { img, title, description } = props;
-
-  console.log(img);
   return (
     <MainBox>
       <GlobalStyle />

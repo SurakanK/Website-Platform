@@ -8,6 +8,8 @@ import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 import SubHeader from "../components/SubHeader";
+import ServiceList from "../components/ServiceList";
+import Strength from "../components/Strength";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -18,13 +20,15 @@ export const IndexPageTemplate = ({
   description,
   intro,
   subhead,
+  strength,
 }) => {
 
   return (
     <div>
       <FullWidthImage img={getImage(image) || image} heading={heading} subheading={subheading} />
       <SubHeader img={getImage(subhead.image) || subhead.image} title={subhead.title} description={subhead.description}/>
-
+      <Strength items={strength}/>
+      <ServiceList/>
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
@@ -101,6 +105,7 @@ const IndexPage = ({ data }) => {
         description={frontmatter.description}
         intro={frontmatter.intro}
         subhead={frontmatter.subhead}
+        strength={frontmatter.strength}
       />
     </Layout>
   );
@@ -149,6 +154,15 @@ query IndexPageTemplate {
         description
         title
         image {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+      strength {
+        title
+        description
+        icon {
           childImageSharp {
             gatsbyImageData
           }
