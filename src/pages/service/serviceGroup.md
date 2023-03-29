@@ -1,25 +1,24 @@
 ---
 templateKey: service-page
-path: /service
 title: Quality Service For Quality Life
 text: We have three main categories of quality services and will expand in the
   future to cover your needs.
-services:
-  - serviceCard:
-      icon: /img/xmlid_413_.png
+serviceGroup:
+  - card:
       title: Health
       text: Health services that will take care and care for you like family.
+      icon: /img/xmlid_413_.png
       Color: "#ff3600"
     detail:
-      body: text
-  - serviceCard:
+      body: t﻿ext
+  - card:
       title: Handyman
       text: Repair service that will fix everything to make it look like new again.
       icon: /img/controller-1.png
       Color: "#f58a2b"
     detail:
       body: t﻿ext
-  - serviceCard:
+  - card:
       title: Cleaning
       text: Cleaning service that covers everything about the house.
       icon: /img/icon_cleaning.png

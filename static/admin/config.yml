@@ -36,9 +36,9 @@ collections:
   - name: "service"
     label: "Service"
     files:
-      - file: "src/pages/service/index.md"
-        label: "Service Page"
-        name: "service"
+      - file: "src/pages/service/serviceGroup.md"
+        label: "Service Group"
+        name: "serviceGroup"
         fields:
           - {
               label: "Template Key",
@@ -49,14 +49,14 @@ collections:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Text", name: "text", widget: "string" }
           - {
-              label: "Services",
-              name: "services",
+              label: "Services Group",
+              name: "serviceGroup",
               widget: "list",
               fields:
                 [
                   {
-                    label: "Service Card",
-                    name: "serviceCard",
+                    label: "Card",
+                    name: "card",
                     widget: "object",
                     fields:
                       [

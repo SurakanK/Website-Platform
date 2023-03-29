@@ -78,8 +78,7 @@ const GridItems = styled.div`
 `;
 
 const ServiceList = () => {
-  const { services, text, title } = useSiteMetadataService();
-  console.log(services);
+  const { serviceGroup, text, title } = useSiteMetadataService();
   return (
     <MainBox>
       <GlobalStyle />
@@ -87,13 +86,13 @@ const ServiceList = () => {
         <h2>{title}</h2>
         <h3>{text}</h3>
         <GridItems>
-          {services.map((service, index) => (
+          {serviceGroup.map((service, index) => (
             <ItemService
-              key={service.serviceCard.title}
-              image={getImage(service.serviceCard.icon)}
-              title={service.serviceCard.title}
-              text={service.serviceCard.text}
-              color={service.serviceCard.Color}
+              key={service.card.title}
+              image={getImage(service.card.icon)}
+              title={service.card.title}
+              text={service.card.text}
+              color={service.card.Color}
               index={index}
             />
           ))}
