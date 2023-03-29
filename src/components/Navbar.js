@@ -61,6 +61,7 @@ const ButtonBeOur = styled.button`
   font-size: 18px;
   font-weight: 500;
   color: #ff3600;
+  background-color: #f6f6f6e5;
   border-radius: 4px 23.5px 23.5px 45px;
   height: 45px;
   filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.2));

@@ -6,21 +6,22 @@ const Item = styled.div`
   padding: 10px;
   word-break: break-all;
   text-align: left;
-`;
-
-const Title = styled.div`
-  display: flex;
-  color: #075056;
-  margin-bottom: 15px;
 
   h2 {
+    color: #075056;
     margin-left: 20px;
     font-size: 1.5vw;
   }
 
   h3 {
     font-size: 18px;
+    color: #7c8387;
   }
+`;
+
+const Title = styled.div`
+  display: flex;
+  margin-bottom: 15px;
 `;
 
 const ItemStrength = (props) => {

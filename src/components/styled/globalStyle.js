@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
     h3 {
       font-size: 18px;
       font-family: Poppins;
-      font-weight: 400;
+      font-weight: 500;
     }
   }
 `;

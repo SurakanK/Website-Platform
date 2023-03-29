@@ -1,5 +1,4 @@
 import { graphql, useStaticQuery } from "gatsby";
-import PropTypes from "prop-types";
 
 export const useSiteMetadataService = () => {
   const data = useStaticQuery(
@@ -16,6 +15,7 @@ export const useSiteMetadataService = () => {
                     gatsbyImageData
                   }
                 }
+                Color
               }
             }
             text

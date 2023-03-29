@@ -1,24 +1,29 @@
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
 import { useSiteMetadataService } from "../templates/service-page";
+import ItemService from "./grid/ItemService";
 import GlobalStyle from "./styled/globalStyle";
 
 const MainBox = styled.div`
   display: flex;
-  background-color: #faece2;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 `;
 
 const BGBox = styled.div`
-  display: flex;
-  justify-content: space-between;
+  position: absolute;
   background-color: #faece2;
   width: 100%;
-  height: 500px;
+  height: 100%;
+  z-index: 0;
 `;
 
 const Circles1 = styled.div`
   position: absolute;
+  left: 0px;
   background-color: #f9d9bbcc;
   height: 100%;
   aspect-ratio: 1;
@@ -34,6 +39,8 @@ const Circles11 = styled.div`
 `;
 
 const Circles2 = styled.div`
+  position: absolute;
+  right: 0px;
   border: 3px solid #a3d9bf;
   height: 100%;
   aspect-ratio: 1;
@@ -49,16 +56,25 @@ const Circles22 = styled.div`
 `;
 
 const LayoutBox = styled.div`
-  margin: 50px 20%;
+  z-index: 1;
+  margin: 30px 20%;
   text-align: center;
-  color: #075056;
+
+  h2 {
+    color: #075056;
+  }
+
+  h3 {
+    margin-top: 10px;
+    color: #7c8387;
+  }
 `;
 
 const GridItems = styled.div`
   display: grid;
-  margin-top: 30px;
+  margin: 65px 0px;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px 100px;
+  gap: 40px 65px;
 `;
 
 const ServiceList = () => {
@@ -68,19 +84,29 @@ const ServiceList = () => {
     <MainBox>
       <GlobalStyle />
       <LayoutBox>
-        <h2>Quality Service For Quality Life</h2>
-        <h3>
-          We have three main categories of quality services and will expand in
-          the future to cover your needs.
-        </h3>
+        <h2>{title}</h2>
+        <h3>{text}</h3>
         <GridItems>
-          <h2>Quality Service For Quality Life</h2>
-          <h2>Quality Service For Quality Life</h2>
-          <h2>Quality Service For Quality Life</h2>
-          <h2>Quality Service For Quality Life</h2>
+          {services.map((service, index) => (
+            <ItemService
+              key={service.serviceCard.title}
+              image={getImage(service.serviceCard.icon)}
+              title={service.serviceCard.title}
+              text={service.serviceCard.text}
+              color={service.serviceCard.Color}
+              index={index}
+            />
+          ))}
         </GridItems>
-        
       </LayoutBox>
+      <BGBox>
+        <Circles1>
+          <Circles11 />
+        </Circles1>
+        <Circles2>
+          <Circles22 />
+        </Circles2>
+      </BGBox>
     </MainBox>
   );
 };
