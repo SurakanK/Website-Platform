@@ -6,10 +6,13 @@ import logo from "../img/logo/firaplatform-logo.svg";
 import burger from "../img/icon/burger.svg";
 import arrow from "../img/icon/arrow.svg";
 import world from "../img/icon/world.svg";
+import Menu from "./menu";
+import Language from "./language";
 
 const Nav = styled.nav`
   background-color: #f6f6f6e5;
-  position: relative;
+  width: 100%;
+  position: fixed;
   z-index: 30;
   border-radius: 0px 0px 30px 30px;
 
@@ -93,13 +96,14 @@ const ButtonLanguage = styled.button`
 `;
 
 const Navbar = () => {
-  const [isActive, setIsActive] = useState(false);
+  const [isActiveMenu, setIsActiveMenu] = useState(false);
+  const [isActiveLanguge, setIsActiveLanguge] = useState(false);
 
   return (
     <Nav>
       <NavMain>
         <NavBrand>
-          <ButtonBurger>
+          <ButtonBurger onClick={() => setIsActiveMenu(!isActiveMenu)}>
             <img src={burger} />
           </ButtonBurger>
           <img src={logo} />
@@ -108,58 +112,15 @@ const Navbar = () => {
         <NavItems>
           <ButtonBeOur>{"Be Our Platform Man"}</ButtonBeOur>
           <HelpCenter>{"Help Center"}</HelpCenter>
-          <ButtonLanguage>
+          <ButtonLanguage onClick={() => setIsActiveLanguge(!isActiveLanguge)}>
             <img src={world} />
             <p>{"English"}</p>
             <img src={arrow} />
           </ButtonLanguage>
         </NavItems>
-
-        {/* <ul
-          id="navMenu"
-          className={` navbar-start has-text-centered navbar-menu ${
-            isActive && "is-active"
-          }`}
-        >
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/about">
-              About
-            </Link>
-          </li>
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/products">
-              Products
-            </Link>
-          </li>
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/blog">
-              Blog
-            </Link>
-          </li>
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/contact">
-              Contact
-            </Link>
-          </li>
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/contact/examples">
-              Form Examples
-            </Link>
-          </li>
-          <li className="navbar-end has-text-centered">
-            <a
-              className="navbar-item"
-              href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="icon">
-                <img src={github} alt="Github" />
-              </span>
-            </a>
-          </li>
-        </ul> */}
       </NavMain>
+      <Menu active={isActiveMenu} />
+      <Language active={isActiveLanguge} />
     </Nav>
   );
 };

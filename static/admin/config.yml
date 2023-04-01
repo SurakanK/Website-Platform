@@ -77,6 +77,38 @@ collections:
                 ],
             }
 
+  - name: "menu"
+    label: "Menu"
+    files:
+      - file: "src/pages/menu/navMenu.md"
+        label: "Nav Menu"
+        name: "navmenu"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "navMenu",
+            }
+          - {
+              label: "Nav Menu List",
+              name: "navMenuList",
+              widget: "list",
+              fields: [
+                { label: "Title", name: "title", widget: "string" },
+                {
+                  label: "Link",
+                  name: "link",
+                  widget: "list",
+                  fields: [
+                    { label: "Title", name: "title", widget: "string" },
+                    { label: "Text", name: "text", widget: "string" }
+                  ]
+                }
+
+              ]
+            }
+
   - name: "pages"
     label: "Pages"
     files:

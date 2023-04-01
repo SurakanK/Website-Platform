@@ -8,7 +8,7 @@ import { withPrefix } from "gatsby";
 import styled from "styled-components";
 
 const Main = styled.div`
-  margin-top: -80px;
+  z-index: 0;
 `;
 
 const TemplateWrapper = ({ children }) => {
