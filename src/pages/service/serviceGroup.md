@@ -1,5 +1,5 @@
 ---
-templateKey: service-page
+templateKey: serviceGroup
 title: Quality Service For Quality Life
 text: We have three main categories of quality services and will expand in the
   future to cover your needs.

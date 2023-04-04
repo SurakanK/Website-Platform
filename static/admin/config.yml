@@ -76,6 +76,31 @@ collections:
                   },
                 ],
             }
+      - file: "src/pages/service/allService.md"
+        label: "All Service"
+        name: "allService"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Text", name: "text", widget: "string" }
+          - {
+              label: "All Service",
+              name: "allService",
+              widget: "list",
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Card",
+                    name: "card",
+                    widget: "object",
+                    fields:
+                      [
+                        { label: Image, name: image, widget: image },
+                        { label: "Link", name: "link", widget: "string" },
+                      ],
+                  },
+                ],
+            }
 
   - name: "menu"
     label: "Menu"

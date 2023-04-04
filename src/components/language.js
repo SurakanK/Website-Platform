@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 
 const Main = styled.div`
@@ -51,13 +50,13 @@ const Language = (data) => {
     <Main active={active}>
       <Contaner>
         <LanButton
-          select={selectLang == "EN" ? true : false}
+          select={selectLang === "EN" ? true : false}
           onClick={() => setSelectLang("EN")}
         >
           English
         </LanButton>
         <LanButton
-          select={selectLang == "TH" ? true : false}
+          select={selectLang === "TH" ? true : false}
           onClick={() => setSelectLang("TH")}
         >
           ไทย

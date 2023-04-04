@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
-import github from "../img/github-icon.svg";
 import styled from "styled-components";
 import logo from "../img/logo/firaplatform-logo.svg";
 import burger from "../img/icon/burger.svg";
@@ -104,18 +102,18 @@ const Navbar = () => {
       <NavMain>
         <NavBrand>
           <ButtonBurger onClick={() => setIsActiveMenu(!isActiveMenu)}>
-            <img src={burger} />
+            <img src={burger}  alt="" />
           </ButtonBurger>
-          <img src={logo} />
+          <img src={logo} alt=""/>
           <CompanyName>{"Fira Platform"}</CompanyName>
         </NavBrand>
         <NavItems>
           <ButtonBeOur>{"Be Our Platform Man"}</ButtonBeOur>
           <HelpCenter>{"Help Center"}</HelpCenter>
           <ButtonLanguage onClick={() => setIsActiveLanguge(!isActiveLanguge)}>
-            <img src={world} />
+            <img src={world} alt=""/>
             <p>{"English"}</p>
-            <img src={arrow} />
+            <img src={arrow} alt=""/>
           </ButtonLanguage>
         </NavItems>
       </NavMain>

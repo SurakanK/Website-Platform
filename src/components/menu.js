@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 import { useSiteMetadataNavMenu } from "../templates/menu";
 
@@ -101,6 +100,7 @@ const Menu = (data) => {
             <ListButton
               clicked={selectMenu === index ? true : false}
               onClick={() => onClickSelect(index)}
+              key={index}
             >
               <h3>{menu.title}</h3>
             </ListButton>

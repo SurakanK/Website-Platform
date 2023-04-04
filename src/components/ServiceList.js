@@ -1,7 +1,7 @@
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { getImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
-import { useSiteMetadataService } from "../templates/service-page";
+import { useSiteMetadataService } from "../templates/serviceGroup";
 import ItemService from "./grid/ItemService";
 import GlobalStyle from "./styled/globalStyle";
 

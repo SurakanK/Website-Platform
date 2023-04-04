@@ -10,6 +10,8 @@ import FullWidthImage from "../components/FullWidthImage";
 import SubHeader from "../components/SubHeader";
 import ServiceList from "../components/ServiceList";
 import Strength from "../components/Strength";
+import AllService from "../components/allServiceBanner";
+import Partners from "../components/partners";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -29,7 +31,9 @@ export const IndexPageTemplate = ({
       <SubHeader img={getImage(subhead.image) || subhead.image} title={subhead.title} description={subhead.description}/>
       <Strength items={strength}/>
       <ServiceList/>
-      <section className="section section--gradient">
+      <AllService/>
+      <Partners></Partners>      
+      {/* <section className="section section--gradient">
         <div className="container">
           <div className="section">
             <div className="columns">
@@ -75,7 +79,7 @@ export const IndexPageTemplate = ({
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
