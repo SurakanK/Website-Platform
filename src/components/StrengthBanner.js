@@ -22,7 +22,7 @@ const GridItems = styled.div`
   gap: 40px 100px;
 `;
 
-const Strength = (props) => {
+const StrengthBannerComponent = (props) => {
   return (
     <MainBox>
       <GlobalStyle />
@@ -43,4 +43,4 @@ const Strength = (props) => {
   );
 };
 
-export default Strength;
+export default StrengthBannerComponent;

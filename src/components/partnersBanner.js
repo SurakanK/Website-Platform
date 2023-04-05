@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../img/logo/firaplatform-logo.svg";
-import { GatsbyImage, getImageData } from "gatsby-plugin-image";
+import GlobalStyle from "./styled/globalStyle";
 
 const MainBox = styled.div`
   display: flex;
@@ -46,35 +46,36 @@ const ItemLogo = styled.div`
   }
 `;
 
-const Partners = () => {
+const PartnersBannerComponent = () => {
   return (
     <MainBox>
+      <GlobalStyle />
       <LayoutBox>
         <Title>We are trusted by our partners</Title>
         <GridItems>
           <ItemLogo>
-            <img src={logo} />
+            <img src={logo} alt="" />
           </ItemLogo>
           <ItemLogo>
-            <img src={logo} />
+            <img src={logo} alt="" />
           </ItemLogo>
           <ItemLogo>
-            <img src={logo} />
+            <img src={logo} alt="" />
           </ItemLogo>
           <ItemLogo>
-            <img src={logo} />
+            <img src={logo} alt="" />
           </ItemLogo>
           <ItemLogo>
-            <img src={logo} />
+            <img src={logo} alt="" />
           </ItemLogo>
           <ItemLogo>
-            <img src={logo} />
+            <img src={logo} alt="" />
           </ItemLogo>
           <ItemLogo>
-            <img src={logo} />
+            <img src={logo} alt="" />
           </ItemLogo>
           <ItemLogo>
-            <img src={logo} />
+            <img src={logo} alt="" />
           </ItemLogo>
         </GridItems>
       </LayoutBox>
@@ -82,4 +83,4 @@ const Partners = () => {
   );
 };
 
-export default Partners;
+export default PartnersBannerComponent;

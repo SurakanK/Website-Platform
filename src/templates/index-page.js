@@ -1,26 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import { getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
-import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 import SubHeader from "../components/SubHeader";
-import ServiceList from "../components/ServiceList";
-import Strength from "../components/Strength";
-import AllService from "../components/allServiceBanner";
-import Partners from "../components/partners";
+import ServiceListBannerComponent from "../components/ServiceListBanner";
+import StrengthBannerComponent from "../components/StrengthBanner";
+import AllServiceBannerComponent from "../components/allServiceBanner";
+import PartnersBannerComponent from "../components/partnersBanner";
+import InvitationBannerComponent from "../components/InvitationBanner";
+import NewsBannerComponent from "../components/NewsBanner";
 
-// eslint-disable-next-line
 export const IndexPageTemplate = ({
   image,
   heading,
   subheading,
-  mainpitch,
-  description,
-  intro,
   subhead,
   strength,
 }) => {
@@ -29,57 +25,12 @@ export const IndexPageTemplate = ({
     <div>
       <FullWidthImage img={getImage(image) || image} heading={heading} subheading={subheading} />
       <SubHeader img={getImage(subhead.image) || subhead.image} title={subhead.title} description={subhead.description}/>
-      <Strength items={strength}/>
-      <ServiceList/>
-      <AllService/>
-      <Partners></Partners>      
-      {/* <section className="section section--gradient">
-        <div className="container">
-          <div className="section">
-            <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <div className="content">
-                  <div className="content">
-                    <div className="tile">
-                      <h1 className="title">{mainpitch.title}</h1>
-                    </div>
-                    <div className="tile">
-                      <h3 className="subtitle">{mainpitch.description}</h3>
-                    </div>
-                  </div>
-                  <div className="columns">
-                    <div className="column is-12">
-                      <h3 className="has-text-weight-semibold is-size-2">
-                        {heading}
-                      </h3>
-                      <p>{description}</p>
-                    </div>
-                  </div>
-                  <Features gridItems={intro.blurbs} />
-                  <div className="columns">
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/products">
-                        See all products
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      Latest stories
-                    </h3>
-                    <BlogRoll />
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/blog">
-                        Read more
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
+      <StrengthBannerComponent items={strength}/>
+      <ServiceListBannerComponent/>
+      <AllServiceBannerComponent/>
+      <PartnersBannerComponent/>
+      <InvitationBannerComponent/>
+      <NewsBannerComponent/>
     </div>
   );
 };

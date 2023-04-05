@@ -98,17 +98,19 @@ const Menu = (data) => {
         <ListMenu>
           {navMenuList.map((menu, index) => (
             <ListButton
+              key={index}
               clicked={selectMenu === index ? true : false}
               onClick={() => onClickSelect(index)}
-              key={index}
             >
               <h3>{menu.title}</h3>
             </ListButton>
           ))}
         </ListMenu>
         <ListItems>
-          {navMenuList[selectMenu].link.map((data) => (
-            <LinkItem>
+          {navMenuList[selectMenu].link.map((data, index) => (
+            <LinkItem
+              key={index}
+            >
               <h2>{data.title}</h2>
               <h3>{data.text}</h3>
             </LinkItem>

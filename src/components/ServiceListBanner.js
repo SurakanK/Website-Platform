@@ -77,7 +77,7 @@ const GridItems = styled.div`
   gap: 40px 65px;
 `;
 
-const ServiceList = () => {
+const ServiceListBannerComponent = () => {
   const { serviceGroup, text, title } = useSiteMetadataService();
   return (
     <MainBox>
@@ -88,7 +88,7 @@ const ServiceList = () => {
         <GridItems>
           {serviceGroup.map((service, index) => (
             <ItemService
-              key={service.card.title}
+              key={index}
               image={getImage(service.card.icon)}
               title={service.card.title}
               text={service.card.text}
@@ -110,4 +110,4 @@ const ServiceList = () => {
   );
 };
 
-export default ServiceList;
+export default ServiceListBannerComponent;

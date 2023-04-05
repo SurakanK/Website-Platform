@@ -3,6 +3,7 @@ import styled from "styled-components";
 import GlobalStyle from "./styled/globalStyle";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { useSiteMetadataAllService } from "../templates/allService";
+import { ButtonStyle1 } from "./button/Button";
 
 const MainBox = styled.div`
   display: flex;
@@ -92,24 +93,8 @@ const MoreButton = styled.button`
   color: #ffffff;
 `;
 
-const AllServiceButton = styled.button`
-  background: #ff3600;
-  margin-bottom: 25px;
-  margin-top: 20px;
-  padding: 15px 40px;
-  border: none;
-  border: 2px solid #ffffff;
-  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.2));
-  border-radius: 4px 32px 32px 32px;
-  font-weight: 700;
-  font-size: 18px;
-  color: #ffffff;
-`;
-
-const AllServiceBanner = () => {
+const AllServiceBannerComponent = () => {
   const { title, text, allService } = useSiteMetadataAllService();
-
-  console.log(allService);
   return (
     <MainBox>
       <GlobalStyle />
@@ -137,10 +122,16 @@ const AllServiceBanner = () => {
             </Item>
           ))}
         </GridItems>
-        <AllServiceButton>View More Service</AllServiceButton>
+        <ButtonStyle1
+          colorBg={"#ff3600"}
+          colotText={"#ffffff"}
+          borderBg={"2px solid #ffffff"}
+        >
+          View More Service
+        </ButtonStyle1>
       </LayoutBox>
     </MainBox>
   );
 };
 
-export default AllServiceBanner;
+export default AllServiceBannerComponent;
