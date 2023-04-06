@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
+import React from "react";
 
 export const useSiteMetadataNavMenu = () => {
   const data = useStaticQuery(
@@ -20,3 +21,13 @@ export const useSiteMetadataNavMenu = () => {
   );
   return data.markdownRemark.frontmatter;
 };
+
+const menu = () => {
+  return (
+    <div>
+      <h1>menu</h1>
+    </div>
+  );
+};
+
+export default menu;

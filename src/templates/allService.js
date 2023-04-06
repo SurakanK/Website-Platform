@@ -1,4 +1,5 @@
 import { graphql, useStaticQuery } from "gatsby";
+import React from "react";
 
 export const useSiteMetadataAllService = () => {
   const data = useStaticQuery(
@@ -26,3 +27,13 @@ export const useSiteMetadataAllService = () => {
   );
   return data.markdownRemark.frontmatter;
 };
+
+const allservice = () => {
+  return (
+    <div>
+      <h1>allservice</h1>
+    </div>
+  );
+};
+
+export default allservice;
