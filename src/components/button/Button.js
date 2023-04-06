@@ -6,7 +6,6 @@ export const ButtonStyle1 = styled.button`
   border: ${(props) => props.borderBg || "none"};
   color: ${(props) => props.colotText || "#000000"};
 
-  margin-top: 50px;
   padding: 15px 25px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
   border-radius: 4px 32px 32px 32px;

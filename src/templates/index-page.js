@@ -12,6 +12,7 @@ import AllServiceBannerComponent from "../components/allServiceBanner";
 import PartnersBannerComponent from "../components/partnersBanner";
 import InvitationBannerComponent from "../components/InvitationBanner";
 import NewsBannerComponent from "../components/NewsBanner";
+import SubscribeBannerComponent from "../components/SubscribeBanner";
 
 export const IndexPageTemplate = ({
   image,
@@ -31,6 +32,7 @@ export const IndexPageTemplate = ({
       <PartnersBannerComponent/>
       <InvitationBannerComponent/>
       <NewsBannerComponent/>
+      <SubscribeBannerComponent/>
     </div>
   );
 };

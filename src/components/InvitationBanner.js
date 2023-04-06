@@ -60,7 +60,7 @@ const InvitationBannerComponent = () => {
             the platform. set up a clear work queue and an employment contract
             to contribute to boosting labor productivity
           </p>
-          <ButtonStyle1 colorBg={"#FF3600"} colotText={"#FFFFFF"}>Be Our Platform Man</ButtonStyle1>
+          <ButtonStyle1 style={{marginTop: "50px"}} colorBg={"#FF3600"} colotText={"#FFFFFF"}>Be Our Platform Man</ButtonStyle1>
         </BoxText>
       </LayoutBox>
     </MainBox>

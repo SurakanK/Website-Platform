@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import logo from "../img/logo/firaplatform-logo.svg";
-import burger from "../img/icon/burger.svg";
-import arrow from "../img/icon/arrow.svg";
-import world from "../img/icon/world.svg";
+import burger from "../../static/img/icon/burger.svg";
+import arrow from "../../static/img/icon/arrow.svg";
+import world from "../../static/img/icon/world.svg";
 import Menu from "./menu";
 import Language from "./language";
 
