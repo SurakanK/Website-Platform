@@ -12,6 +12,7 @@ module.exports = {
         displayName: false,
       },
     },
+    "gatsby-plugin-material-ui",
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-sass",
