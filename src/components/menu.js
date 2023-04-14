@@ -1,6 +1,6 @@
+import { graphql, useStaticQuery } from "gatsby";
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useSiteMetadataNavMenu } from "../templates/menu";
 
 const Main = styled.div`
   display: block;
@@ -9,9 +9,7 @@ const Main = styled.div`
   top: 80px;
   width: 100%;
 
-  ${(props) => props.active} {
-    display: none;
-  }
+  display: ${props => (props.active ? "block" : "none")};
 `;
 
 const Contaner = styled.div`
@@ -82,6 +80,27 @@ const LinkItem = styled.div`
     font-size: 13px;
   }
 `;
+
+const useSiteMetadataNavMenu = () => {
+  const data = useStaticQuery(
+    graphql`
+      query navMenu {
+        markdownRemark(frontmatter: { templateKey: { eq: "menu" } }) {
+          frontmatter {
+            navMenuList {
+              title
+              link {
+                text
+                title
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+  return data.markdownRemark.frontmatter;
+};
 
 const Menu = (data) => {
   const { active } = data;

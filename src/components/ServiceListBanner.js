@@ -1,9 +1,9 @@
 import { getImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
-import { useSiteMetadataService } from "../templates/serviceGroup";
 import ItemService from "./grid/ItemService";
 import GlobalStyle from "./styled/globalStyle";
+import { graphql, useStaticQuery } from "gatsby";
 
 const MainBox = styled.div`
   display: flex;
@@ -76,6 +76,34 @@ const GridItems = styled.div`
   grid-template-columns: repeat(3, 1fr);
   gap: 40px 65px;
 `;
+
+const useSiteMetadataService = () => {
+  const data = useStaticQuery(
+    graphql`
+      query serviceGroupQuery {
+        markdownRemark(frontmatter: { templateKey: { eq: "serviceGroup" } }) {
+          frontmatter {
+            text
+            title
+            serviceGroup {
+              card {
+                Color
+                text
+                title
+                icon {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+  return data.markdownRemark.frontmatter;
+};
 
 const ServiceListBannerComponent = () => {
   const { serviceGroup, text, title } = useSiteMetadataService();

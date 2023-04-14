@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import GlobalStyle from "./styled/globalStyle";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { useSiteMetadataAllService } from "../templates/allService";
 import { ButtonStyle1 } from "./button/Button";
+import { graphql, useStaticQuery } from "gatsby";
 
 const MainBox = styled.div`
   display: flex;
@@ -92,6 +92,33 @@ const MoreButton = styled.button`
   font-size: 18px;
   color: #ffffff;
 `;
+
+const useSiteMetadataAllService = () => {
+  const data = useStaticQuery(
+    graphql`
+      query allServiceQuery {
+        markdownRemark(frontmatter: { templateKey: { eq: "allService" } }) {
+          frontmatter {
+            allService {
+              card {
+                link
+                image {
+                  childImageSharp {
+                    gatsbyImageData
+                  }
+                }
+              }
+              title
+            }
+            text
+            title
+          }
+        }
+      }
+    `
+  );
+  return data.markdownRemark.frontmatter;
+};
 
 const AllServiceBannerComponent = () => {
   const { title, text, allService } = useSiteMetadataAllService();

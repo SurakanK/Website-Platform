@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import logo from "../img/logo/firaplatform-logo.svg";
 import burger from "../../static/img/icon/burger.svg";
 import arrow from "../../static/img/icon/arrow.svg";
 import world from "../../static/img/icon/world.svg";
 import Menu from "./menu";
 import Language from "./language";
+import styled from "styled-components";
 
 const Nav = styled.nav`
   background-color: #f6f6f6e5;

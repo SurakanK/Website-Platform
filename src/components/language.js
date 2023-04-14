@@ -7,9 +7,7 @@ const Main = styled.div`
   top: 80px;
   right: 100px;
 
-  ${(props) => props.active} {
-    display: none;
-  }
+  display: ${props => (props.active ? "block" : "none")};
 `;
 
 const Contaner = styled.div`
