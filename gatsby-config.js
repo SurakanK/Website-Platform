@@ -6,9 +6,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-google-fonts",
-    },
-    {
       resolve: "gatsby-plugin-styled-components",
     },
     {
