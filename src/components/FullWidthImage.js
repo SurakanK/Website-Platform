@@ -1,65 +1,109 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import styled from "styled-components";
-import GlobalStyle from "./styled/globalStyle";
-import ButtonDownLoad from "./button/ButtonDownLoad";
+import { ButtonDownLoad } from "./button/ButtonDownLoad";
 
-import appstoreLogo from "../img/logo/appstore-logo.svg";
-import googleplayLogo from "../img/logo/googleplay-logo.svg";
+import appstoreLogo from "../../static/img/icon/appleStore.svg";
+import googleplayLogo from "../../static/img/icon/googlePlay.svg";
+import { graphql, useStaticQuery } from "gatsby";
 
 const MainBox = styled.div`
-  display: grid;
+  display: flex;
   align-items: center;
   position: relative;
+  overflow: hidden;
+`;
+
+const GridLayout = styled.div`
+  display: grid;
+  position: absolute;
+  height: 100%;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
 `;
 
 const HeadingBox = styled.div`
-  position: absolute;
-  top: 26%;
-  left: 30%;
-  width: 28%;
-  transform: translate(-50%, 0%);
+  margin: 0 25%;
+  padding-top: 3vw;
 `;
+
+const ImageBox = styled.div`
+  max-width: 60%;
+  place-self: end left;
+`;
+
 const HeadingText = styled.h1`
   color: #075056;
 `;
+
 const SubHeadingText = styled.h3`
   color: #075056;
 `;
 
 const ButtonBox = styled.div`
-  margin-top: 50px;
+  margin-top: 2vw;
   display: flex;
 `;
 
-export default function FullWidthImage(props) {
-  const { img, heading, subheading } = props;
+const useSiteMetadataHeader = () => {
+  const data = useStaticQuery(
+    graphql`
+      query header {
+        markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+          frontmatter {
+            header {
+              heading
+              subheading
+              image {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+              imageBg {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+  return data.markdownRemark.frontmatter;
+};
+
+export default function FullWidthImage() {
+  const { heading, subheading, image, imageBg } =
+    useSiteMetadataHeader().header;
 
   return (
     <React.Fragment>
-      <GlobalStyle />
       <MainBox>
         <GatsbyImage
-          image={img}
-          objectFit={"cover"}
-          objectPosition={"top left"}
-          style={{
-            gridArea: "1/1",
-          }}
+          style={{ width: "100%" }}
+          image={getImage(imageBg)}
           layout="fullWidth"
-          aspectratio={3 / 1}
           alt=""
-          formats={["auto", "webp", "avif"]}
         />
-        <HeadingBox>
-          <HeadingText>{heading}</HeadingText>
-          <SubHeadingText>{subheading}</SubHeadingText>
-          <ButtonBox>
-            <ButtonDownLoad image={appstoreLogo} title={"Download on the"} header={"Appp Store"}/>
-            <ButtonDownLoad image={googleplayLogo} title={"Get it on"} header={"Google Play"}/>
-          </ButtonBox>
-        </HeadingBox>
+        <GridLayout>
+          <HeadingBox>
+            <HeadingText>{heading}</HeadingText>
+            <SubHeadingText>{subheading}</SubHeadingText>
+            <ButtonBox>
+              <ButtonDownLoad>
+                <img src={appstoreLogo} />
+              </ButtonDownLoad>
+              <ButtonDownLoad>
+                <img src={googleplayLogo} />
+              </ButtonDownLoad>
+            </ButtonBox>
+          </HeadingBox>
+          <ImageBox>
+            <GatsbyImage image={getImage(image)} />
+          </ImageBox>
+        </GridLayout>
       </MainBox>
     </React.Fragment>
   );

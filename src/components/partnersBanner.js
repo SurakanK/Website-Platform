@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../img/logo/firaplatform-logo.svg";
-import GlobalStyle from "./styled/globalStyle";
 
 const MainBox = styled.div`
   display: flex;
@@ -21,11 +20,10 @@ const LayoutBox = styled.div`
   grid-template-columns: repeat(2, 1fr);
 `;
 
-const Title = styled.h2`
+const Title = styled.h1`
   padding: 0 28%;
   color: #075056;
   font-weight: 800;
-  font-size: 40px;
 `;
 
 const GridItems = styled.div`
@@ -49,7 +47,6 @@ const ItemLogo = styled.div`
 const PartnersBannerComponent = () => {
   return (
     <MainBox>
-      <GlobalStyle />
       <LayoutBox>
         <Title>We are trusted by our partners</Title>
         <GridItems>

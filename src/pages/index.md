@@ -6,10 +6,6 @@ Subhead:
     employer and the contractor to coordinate and hire through this platform.
     You can find the service categories available on the platform to meet your
     needs efficiently, at affordable prices and with reliability.
-templateKey: index-page
-image: /img/headerbanner.png
-heading: One for all  service, for your  better life
-subheading: An effective medium for working people. and employers here Platform
 subhead:
   image: /img/banner2.png
   description: The Platform is a software that acts as an intermediary between the
@@ -32,15 +28,19 @@ strength:
   - icon: /img/24-hour-service-1.png
     title: 24 hour customer service
     description: There is a quality team to help the you and Platform Man
+heading: One for all  service, for your  better life
+subheading: An effective medium for working people. and employers here Platform
+templateKey: index-page
+header:
+  imageBg: /img/image.png
+  image: /img/image-1.png
+  heading: One for all  service, for your  better life
+  subheading: An effective medium for working people. and employers here Platform
 mainpitch:
   title: Why Kaldi
   description: >
     Kaldi is the coffee store for everyone
      who believes that great coffee shouldn't just taste good, it should do good too. We source all of our beans directly from small scale sustainable farmers and make sure part of the profits are reinvested in their communities.
-description: Kaldi is the ultimate spot for coffee lovers who want to learn
-  about their java’s origin and support the farmers that grew it. We take coffee
-  production, roasting and brewing seriously and we’re glad to pass that
-  knowledge to anyone.
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -93,4 +93,9 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
+image: /img/image-1.png
+description: Kaldi is the ultimate spot for coffee lovers who want to learn
+  about their java’s origin and support the farmers that grew it. We take coffee
+  production, roasting and brewing seriously and we’re glad to pass that
+  knowledge to anyone.
 ---

@@ -63,16 +63,15 @@ collections:
                         { label: "Title", name: "title", widget: "string" },
                         { label: "Text", name: "text", widget: "string" },
                         { label: Icon, name: icon, widget: image },
-                        { name: Color, label: color, widget: color }
+                        { name: Color, label: color, widget: color },
                       ],
                   },
                   {
                     label: "Detail",
                     name: "detail",
                     widget: "object",
-                    fields: [
-                      { label: "Body", name: "body", widget: "markdown" },
-                    ],
+                    fields:
+                      [{ label: "Body", name: "body", widget: "markdown" }],
                   },
                 ],
             }
@@ -119,19 +118,20 @@ collections:
               label: "Nav Menu List",
               name: "navMenuList",
               widget: "list",
-              fields: [
-                { label: "Title", name: "title", widget: "string" },
-                {
-                  label: "Link",
-                  name: "link",
-                  widget: "list",
-                  fields: [
-                    { label: "Title", name: "title", widget: "string" },
-                    { label: "Text", name: "text", widget: "string" }
-                  ]
-                }
-
-              ]
+              fields:
+                [
+                  { label: "Title", name: "title", widget: "string" },
+                  {
+                    label: "Link",
+                    name: "link",
+                    widget: "list",
+                    fields:
+                      [
+                        { label: "Title", name: "title", widget: "string" },
+                        { label: "Text", name: "text", widget: "string" },
+                      ],
+                  },
+                ],
             }
 
   - name: "pages"
@@ -147,9 +147,18 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
-          - { label: Image, name: image, widget: image }
-          - { label: Heading, name: heading, widget: string }
-          - { label: Subheading, name: subheading, widget: string }
+          - {
+              label: Header,
+              name: header,
+              widget: object,
+              fields:
+                [
+                  { label: ImageBg, name: imageBg, widget: image },
+                  { label: Image, name: image, widget: image },
+                  { label: Heading, name: heading, widget: string },
+                  { label: Subheading, name: subheading, widget: string },
+                ],
+            }
           - {
               label: Subhead,
               name: subhead,

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import GlobalStyle from "./styled/globalStyle";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { ButtonStyle1 } from "./button/Button";
 import { graphql, useStaticQuery } from "gatsby";
@@ -15,36 +14,34 @@ const MainBox = styled.div`
 `;
 
 const LayoutBox = styled.div`
-  margin: 30px 20%;
+  margin: 2vw 15%;
   text-align: center;
 
-  h2 {
+  h1 {
     color: #ffffff;
     font-weight: 600;
-    font-size: 48px;
   }
 
   h3 {
-    margin-top: 10px;
+    margin-top: 1vw;
     font-weight: 500;
-    font-size: 18px;
     color: #f6f6f6;
   }
 `;
 
 const GridItems = styled.div`
   display: grid;
-  margin: 60px;
-  gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-auto-rows: 250px;
+  margin: 3vw;
+  gap: 2vw;
+  grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+  grid-auto-rows: 15vw;
   grid-auto-flow: dense;
 `;
 
 const Item = styled.div`
   display: flex;
   position: relative;
-  border-radius: 4px 32px 32px 32px;
+  border-radius: 0.3vw 2vw 2vw;
   filter: drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.1));
   overflow: hidden;
   transition-duration: 0.4s;
@@ -124,9 +121,8 @@ const AllServiceBannerComponent = () => {
   const { title, text, allService } = useSiteMetadataAllService();
   return (
     <MainBox>
-      <GlobalStyle />
       <LayoutBox>
-        <h2>{title}</h2>
+        <h1>{title}</h1>
         <h3>{text}</h3>
         <GridItems>
           {allService.map((service, index) => (
@@ -152,7 +148,7 @@ const AllServiceBannerComponent = () => {
         <ButtonStyle1
           colorBg={"#ff3600"}
           colotText={"#ffffff"}
-          borderBg={"2px solid #ffffff"}
+          borderBg={"0.13vw solid #ffffff"}
         >
           View More Service
         </ButtonStyle1>

@@ -3,13 +3,11 @@ import React from "react";
 import styled from "styled-components";
 
 const Item = styled.div`
-  width: 320px;
-  /* height: 300px; */
   position: relative;
   background-color: #ffffff;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
-  border: 2px solid ${(props) => (props.color ? props.color : "white")};
-  border-radius: 8px 32px 32px 32px;
+  border: 0.15vw solid ${(props) => (props.color ? props.color : "white")};
+  border-radius: 0.5vw 2vw 2vw;
   overflow: hidden;
 `;
 
@@ -28,21 +26,21 @@ const Number = styled.h1`
   bottom: 10%;
   left: 15%;
   font-weight: 500;
-  font-size: 48px;
-  color: white;
+  font-size: 3vw;
 `;
 
 const Layout = styled.div`
   margin: 13% 8%;
 
   h2 {
-    margin-top: 10px;
-    font-size: 30px;
+    color: #075056;
+    margin-top: 0.5vw;
+    font-size: 1.5vw;
   }
 
   h3 {
-    margin-top: 10px;
-    font-size: 18px;
+    margin-top: 0.5vw;
+    font-size: 1vw;
     font-weight: 500px;
   }
 `;
@@ -52,18 +50,17 @@ const ItemService = (props) => {
   return (
     <Item color={color}>
       <Circles color={color}>
-        <Number>{`0${index + 1}`}</Number>
+        <Number style={{color: "white"}}>{`0${index + 1}`}</Number>
       </Circles>
       <Layout>
-        <GatsbyImage image={image} alt="" />
+        <GatsbyImage
+          image={image}
+          alt=""
+          style={{ width: "5vw", aspectRatio: 1, padding: "1vw" }}
+        />
         <h2>{title}</h2>
         <h3>{text}</h3>
       </Layout>
-      {/* <Title>
-        <GatsbyImage image={image} alt="" />
-        <h2>{title}</h2>
-      </Title>
-      <h3>{text}</h3> */}
     </Item>
   );
 };

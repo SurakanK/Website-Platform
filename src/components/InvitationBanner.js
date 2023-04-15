@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import banner from "../banner/banner1.png";
-import GlobalStyle from "./styled/globalStyle";
 import { ButtonStyle1 } from "./button/Button";
 
 const MainBox = styled.div`
@@ -27,18 +26,16 @@ const Banner = styled.img`
 `;
 
 const BoxText = styled.div`
-  margin: 80px 40% 80px 0;
+  margin: 10% 40% 10% 0;
 
   h1 {
     font-weight: 600;
-    font-size: 48px;
     color: #075056;
   }
 
-  p {
-    margin-top: 10px;
+  h3 {
+    margin-top: 1vw;
     font-weight: 400;
-    font-size: 18px;
     color: #7c8387;
   }
 `;
@@ -46,12 +43,11 @@ const BoxText = styled.div`
 const InvitationBannerComponent = () => {
   return (
     <MainBox>
-      <GlobalStyle />
       <LayoutBox>
         <Banner src={banner} alt="" />
         <BoxText>
           <h1>{"How good is it to become a PlatformMan ?"}</h1>
-          <p>
+          <h3>
             The Platform will assist in locating jobs in the regions where
             people desire to work. Additionally, they can gather information for
             registering their own profile to boost their credibility for
@@ -59,8 +55,8 @@ const InvitationBannerComponent = () => {
             experience and the numerous service categories that are offered on
             the platform. set up a clear work queue and an employment contract
             to contribute to boosting labor productivity
-          </p>
-          <ButtonStyle1 style={{marginTop: "50px"}} colorBg={"#FF3600"} colotText={"#FFFFFF"}>Be Our Platform Man</ButtonStyle1>
+          </h3>
+          <ButtonStyle1 style={{marginTop: "2.5vw"}} colorBg={"#FF3600"} colotText={"#FFFFFF"}>Be Our Platform Man</ButtonStyle1>
         </BoxText>
       </LayoutBox>
     </MainBox>

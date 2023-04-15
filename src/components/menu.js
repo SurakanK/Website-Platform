@@ -6,10 +6,10 @@ const Main = styled.div`
   display: block;
   position: absolute;
   padding: 5px 10%;
-  top: 80px;
+  top: 100%;
   width: 100%;
 
-  display: ${props => (props.active ? "block" : "none")};
+  display: ${(props) => (props.active ? "block" : "none")};
 `;
 
 const Contaner = styled.div`
@@ -31,33 +31,30 @@ const ListButton = styled.button`
   border: none;
   text-align: left;
   padding-left: 20%;
-  border-radius: 0px 10px 10px 10px;
   transition-duration: 0.4s;
-
-  background-color: #ffffff;
-  color: #243037;
-
-  &:hover {
-    background-color: #ffdecd;
-  }
+  font-size: 18px;
 
   h3 {
-    font-size: 20;
+    font-size: 20px;
     font-weight: 600;
   }
 
-  ${(props) => !props.clicked} {
-    color: #ff3600;
-    background-color: #ffdecd;
+  background-color: ${(props) => (props.clicked ? "  #ffdecd" : "#ffffff")};
+  color: ${(props) => (props.clicked ? " #ff3600" : "#243037")};
+
+  @media (max-width: 1024px) {
+    h3 {
+      font-size: 12px;
+    }
   }
 `;
 
 const ListItems = styled.div`
   display: grid;
   width: 100%;
-  padding: 15px 40px;
+  padding: 1vw 2vw;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px 70px;
+  gap: 2vw 3vw;
 `;
 
 const LinkItem = styled.div`
@@ -78,6 +75,16 @@ const LinkItem = styled.div`
     margin-top: 10px;
     font-weight: 400;
     font-size: 13px;
+  }
+
+  @media (max-width: 1024px) {
+    h2 {
+      font-size: 12px;
+    }
+
+    h3 {
+      font-size: 10px;
+    }
   }
 `;
 
@@ -127,9 +134,7 @@ const Menu = (data) => {
         </ListMenu>
         <ListItems>
           {navMenuList[selectMenu].link.map((data, index) => (
-            <LinkItem
-              key={index}
-            >
+            <LinkItem key={index}>
               <h2>{data.title}</h2>
               <h3>{data.text}</h3>
             </LinkItem>

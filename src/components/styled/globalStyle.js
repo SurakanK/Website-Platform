@@ -1,4 +1,3 @@
-// globalStyles.js
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -8,19 +7,19 @@ const GlobalStyle = createGlobalStyle`
     background: white;
 
     h1 {
-      font-size: 55px;
+      font-size: 3vw;
       font-family: Poppins;
       font-weight: 700;
     }
 
     h2 {
-      font-size: 48px;
+      font-size: 1.5vw;
       font-family: Poppins;
       font-weight: 600;
     }
 
     h3 {
-      font-size: 18px;
+      font-size: 1vw;
       font-family: Poppins;
       font-weight: 500;
     }

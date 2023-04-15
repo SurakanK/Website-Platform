@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import GlobalStyle from "./styled/globalStyle";
 import { ButtonStyle1 } from "./button/Button";
 
 const MainBox = styled.div`
@@ -11,36 +10,36 @@ const MainBox = styled.div`
 `;
 
 const LayoutBox = styled.div`
-  margin: 50px 25%;
+  margin: 5% 25%;
   width: 100%;
   text-align: center;
 
   h1 {
     font-weight: 600;
-    font-size: 48px;
     color: #ffffff;
   }
 `;
 
 const LayoutInput = styled.div`
-  margin-top: 40px;
+  margin-top: 3vw;
 `;
 
 const Input = styled.input`
-  height: 60px;
-  width: 450px;
+  height: 3.5vw;
+  width: 60%;
   background-color: #ffffff26;
   background-image: url("/img/icon/mail.svg");
-  background-position: 25px 50%;
+  background-position: 1.5vw 50%;
   background-repeat: no-repeat;
-  padding-left: 60px;
-  padding-right: 25px;
-  border-radius: 50px;
+  background-size: 2vw;
+  padding-left: 8%;
+  padding-right: 1.5vw;
+  border-radius: 2vw;
   border: none;
 
   font-family: Poppins;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1vw;
   color: #ffffff;
 
   ::placeholder {
@@ -51,13 +50,12 @@ const Input = styled.input`
 const SubscribeBannerComponent = () => {
   return (
     <MainBox>
-      <GlobalStyle />
       <LayoutBox>
         <h1>Subscribe to Our Newsletter For Weekly Article Update.</h1>
         <LayoutInput>
           <Input placeholder="Enter your e-mail address" />
           <ButtonStyle1
-            style={{ marginLeft: "20px" }}
+            style={{ marginLeft: "1vw" }}
             colorBg={"#FF3600"}
             colotText={"#FFFFFF"}
           >

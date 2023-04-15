@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import GlobalStyle from "./styled/globalStyle";
 import imageNew from "../banner/bannerNews.png";
 
 const MainBox = styled.div`
@@ -11,20 +10,18 @@ const MainBox = styled.div`
 `;
 
 const LayoutBox = styled.div`
-  margin: 80px 10%;
+  margin: 5% 10%;
   width: 100%;
   text-align: center;
 
   h1 {
     font-weight: 600;
-    font-size: 48px;
     color: #075056;
   }
 
   h3 {
-    margin-top: 10px;
+    margin-top: 1vw;
     font-weight: 500;
-    font-size: 18px;
     color: #7c8387;
   }
 `;
@@ -32,24 +29,28 @@ const LayoutBox = styled.div`
 const GridItems = styled.div`
   display: inline-grid;
   justify-items: center;
-  margin-top: 60px;
-  gap: 40px;
+  margin-top: 3vw;
+  gap: 2vw;
   grid-template-columns: repeat(4, 1fr);
 `;
 
 const Item = styled.div`
   background: #ffffff;
-  border: 3px solid #075056;
+  border: 0.15vw solid #075056;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 4px 16px 16px 16px;
-  max-width: 270px;
+  border-radius: 0.15vw 1vw 1vw;
+  max-width: 15vw;
 
   h2 {
     padding: 5%;
     text-align: left;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1vw;
     color: #075056;
+  }
+  
+  img {
+    width: 100%;
   }
 `;
 
@@ -62,13 +63,13 @@ const ItemFooter = styled.div`
   h3 {
     margin: 0;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1vw;
     color: #ff3600;
   }
 
   h4 {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 0.8vw;
     color: #7c8387;
   }
 `;
@@ -76,7 +77,6 @@ const ItemFooter = styled.div`
 const NewsBannerComponent = () => {
   return (
     <MainBox>
-      <GlobalStyle />
       <LayoutBox>
         <h1>Latest News Update</h1>
         <h3>

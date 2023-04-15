@@ -6,6 +6,7 @@ import "./all.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
 import styled from "styled-components";
+import GlobalStyle from "./styled/globalStyle";
 
 const Main = styled.div`
   z-index: 0;
@@ -53,6 +54,7 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix("/")}img/og-image.jpg`}
         />
       </Helmet>
+      <GlobalStyle />
       <Navbar />
       <Main>{children}</Main>
       <Footer />

@@ -2,7 +2,6 @@ import { getImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
 import ItemService from "./grid/ItemService";
-import GlobalStyle from "./styled/globalStyle";
 import { graphql, useStaticQuery } from "gatsby";
 
 const MainBox = styled.div`
@@ -57,10 +56,10 @@ const Circles22 = styled.div`
 
 const LayoutBox = styled.div`
   z-index: 1;
-  margin: 30px 20%;
+  margin: 2vw 20%;
   text-align: center;
 
-  h2 {
+  h1 {
     color: #075056;
   }
 
@@ -72,9 +71,9 @@ const LayoutBox = styled.div`
 
 const GridItems = styled.div`
   display: grid;
-  margin: 65px 0px;
+  margin: 4vw 0px;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px 65px;
+  gap: 2vw 3vw;
 `;
 
 const useSiteMetadataService = () => {
@@ -109,9 +108,8 @@ const ServiceListBannerComponent = () => {
   const { serviceGroup, text, title } = useSiteMetadataService();
   return (
     <MainBox>
-      <GlobalStyle />
       <LayoutBox>
-        <h2>{title}</h2>
+        <h1>{title}</h1>
         <h3>{text}</h3>
         <GridItems>
           {serviceGroup.map((service, index) => (

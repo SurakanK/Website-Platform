@@ -6,9 +6,9 @@ export const ButtonStyle1 = styled.button`
   border: ${(props) => props.borderBg || "none"};
   color: ${(props) => props.colotText || "#000000"};
 
-  padding: 15px 25px;
+  padding: 1vw;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 4px 32px 32px 32px;
+  border-radius: 0.2vw 2vw 2vw;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 1vw;
 `;

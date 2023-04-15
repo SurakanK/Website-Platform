@@ -1,7 +1,7 @@
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
-import GlobalStyle from "./styled/globalStyle";
+import { graphql, useStaticQuery } from "gatsby";
 
 const MainBox = styled.div`
   display: flex;
@@ -18,41 +18,58 @@ const SubBox = styled.div`
 `;
 
 const Border = styled.div`
-  padding: 35px;
-  border-radius: 16px 64px 64px 64px;
-  border: 4px solid #075056;
-  max-width: 544px;
+  padding: 5%;
+  border-radius: 1vw 5vw 5vw;
+  border: 0.3vw solid rgb(7, 80, 86);
+  max-width: 60%;
 
-  h2 {
+  h1 {
     color: #075056;
   }
 
   h3 {
     margin-top: 10px;
-    color: #7C8387;
+    color: #7c8387;
   }
 `;
 
-const SubHeader = (props) => {
-  const { img, title, description } = props;
+const useSiteMetadataSubHeader = () => {
+  const data = useStaticQuery(
+    graphql`
+      query subHeader {
+        markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+          frontmatter {
+            Subhead {
+              description
+              title
+              image {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+  return data.markdownRemark.frontmatter;
+};
+
+const SubHeader = () => {
+  const { image, title, description } = useSiteMetadataSubHeader().Subhead;
+  
   return (
     <MainBox>
-      <GlobalStyle />
       <GatsbyImage
-        image={img}
-        objectFit={"cover"}
-        objectPosition={"top left"}
-        style={{
-          gridArea: "1/1",
-        }}
+        style={{ width: "100%" }}
+        image={getImage(image)}
         layout="fullWidth"
-        aspectratio={3 / 1}
         alt=""
-        formats={["auto", "webp", "avif"]}
       />
       <SubBox>
         <Border>
-          <h2>{title}</h2>
+          <h1>{title}</h1>
           <h3>{description}</h3>
         </Border>
       </SubBox>

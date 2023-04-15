@@ -24,9 +24,9 @@ export const IndexPageTemplate = ({
 
   return (
     <div>
-      <FullWidthImage img={getImage(image) || image} heading={heading} subheading={subheading} />
-      <SubHeader img={getImage(subhead.image) || subhead.image} title={subhead.title} description={subhead.description}/>
-      <StrengthBannerComponent items={strength}/>
+      <FullWidthImage/>
+      <SubHeader/>
+      <StrengthBannerComponent/>
       <ServiceListBannerComponent/>
       <AllServiceBannerComponent/>
       <PartnersBannerComponent/>

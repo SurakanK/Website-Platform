@@ -13,19 +13,15 @@ const Nav = styled.nav`
   position: fixed;
   z-index: 30;
   border-radius: 0px 0px 30px 30px;
-
-  @media (min-width: 1024px) {
-    min-height: 80px;
-    align-items: stretch;
-    display: flex;
-  }
+  align-items: stretch;
+  display: flex;
 `;
 
 const NavMain = styled.nav`
   display: inline-flex;
   position: relative;
   margin: auto;
-  padding: 0 100px;
+  padding: 0 5vw;
   flex-grow: 1;
   width: auto;
 `;
@@ -33,12 +29,23 @@ const NavMain = styled.nav`
 const NavBrand = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    img {
+      width: 50px;
+    }
+  }
 `;
 
 const ButtonBurger = styled.button`
-  margin-right: 20px;
+  margin-right: 1vw;
   background-color: transparent;
   border: 0px;
+  @media (max-width: 1024px) {
+    img {
+      width: 30px;
+    }
+  }
 `;
 
 const CompanyName = styled.p`
@@ -46,8 +53,12 @@ const CompanyName = styled.p`
   font-weight: 700;
   line-height: 24px;
   width: 100px;
-  margin-left: 10px;
+  margin-left: 0.5vw;
   color: #075056;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
 `;
 
 const NavItems = styled.div`
@@ -58,7 +69,6 @@ const NavItems = styled.div`
 `;
 
 const ButtonBeOur = styled.button`
-  margin-left: 30px;
   font-size: 18px;
   font-weight: 500;
   color: #ff3600;
@@ -68,13 +78,23 @@ const ButtonBeOur = styled.button`
   filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.2));
   border: 2px solid #ff3600;
   padding: 5px 24px;
+
+  @media (max-width: 1024px) {
+    font-size: 12px;
+    padding: 3px 15px;
+    height: 35px;
+  }
 `;
 
 const HelpCenter = styled.div`
-  margin-left: 30px;
+  margin-left: 2vw;
   font-size: 18px;
   font-weight: 500;
   color: #7c8387;
+
+  @media (max-width: 1024px) {
+    font-size: 12px;
+  }
 `;
 
 const ButtonLanguage = styled.button`
@@ -82,7 +102,7 @@ const ButtonLanguage = styled.button`
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  margin-left: 30px;
+  margin-left: 2vw;
   border: 0px;
   font-size: 18px;
   font-weight: 500;
@@ -90,6 +110,14 @@ const ButtonLanguage = styled.button`
 
   p {
     padding: 0px 5px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 12px;
+
+    img {
+      width: 20px;
+    }
   }
 `;
 
@@ -102,18 +130,18 @@ const Navbar = () => {
       <NavMain>
         <NavBrand>
           <ButtonBurger onClick={() => setIsActiveMenu(!isActiveMenu)}>
-            <img src={burger}  alt="" />
+            <img src={burger} alt="" />
           </ButtonBurger>
-          <img src={logo} alt=""/>
+          <img src={logo} alt="" />
           <CompanyName>{"Fira Platform"}</CompanyName>
         </NavBrand>
         <NavItems>
           <ButtonBeOur>{"Be Our Platform Man"}</ButtonBeOur>
           <HelpCenter>{"Help Center"}</HelpCenter>
           <ButtonLanguage onClick={() => setIsActiveLanguge(!isActiveLanguge)}>
-            <img src={world} alt=""/>
+            <img src={world} alt="" />
             <p>{"English"}</p>
-            <img src={arrow} alt=""/>
+            <img src={arrow} alt="" />
           </ButtonLanguage>
         </NavItems>
       </NavMain>

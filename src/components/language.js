@@ -4,8 +4,8 @@ import styled from "styled-components";
 const Main = styled.div`
   position: absolute;
   padding-top: 5px;
-  top: 80px;
-  right: 100px;
+  top: 100%;
+  right: 5vw;
 
   display: ${props => (props.active ? "block" : "none")};
 `;
@@ -23,10 +23,7 @@ const LanButton = styled.button`
   border: none;
   padding: 15px 35px;
   border-radius: 4px 16px 16px 16px;
-  transition-duration: 0.4s;
 
-  background-color: #ffffff;
-  color: #7c8387;
   font-weight: 600;
   font-size: 18px;
 
@@ -34,9 +31,12 @@ const LanButton = styled.button`
     background-color: #ffdecd;
   }
 
-  ${(props) => !props.select} {
-    color: #ff3600;
-    background-color: #ffdecd;
+  background-color: ${(props) => props.select? "#ffdecd": "#ffffff"};
+  color: ${(props) => props.select? "#ff3600": "#7c8387"};
+
+  @media (max-width: 1024px) {
+    font-size: 12px;
+    padding: 10px 25px;
   }
 `;
 
