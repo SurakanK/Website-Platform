@@ -5,18 +5,22 @@ const Main = styled.div`
   position: absolute;
   padding-top: 5px;
   top: 100%;
-  right: 5vw;
+  right: 10vw;
 
   display: ${props => (props.active ? "block" : "none")};
 `;
 
-const Contaner = styled.div`
+const ContanerWeb = styled.div`
   display: grid;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-color: rgb(246, 246, 246, 0.9);
   overflow: hidden;
   backdrop-filter: blur(5px);
   border-radius: 4px 16px 16px 16px;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const LanButton = styled.button`
@@ -46,7 +50,7 @@ const Language = (data) => {
 
   return (
     <Main active={active}>
-      <Contaner>
+      <ContanerWeb>
         <LanButton
           select={selectLang === "EN" ? true : false}
           onClick={() => setSelectLang("EN")}
@@ -59,7 +63,7 @@ const Language = (data) => {
         >
           ไทย
         </LanButton>
-      </Contaner>
+      </ContanerWeb>
     </Main>
   );
 };

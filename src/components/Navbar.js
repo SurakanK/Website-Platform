@@ -5,16 +5,19 @@ import arrow from "../../static/img/icon/arrow.svg";
 import world from "../../static/img/icon/world.svg";
 import Menu from "./menu";
 import Language from "./language";
+import { InputSearch } from "./input/inputSearch";
+
 import styled from "styled-components";
 
 const Nav = styled.nav`
-  background-color: #f6f6f6e5;
-  width: 100%;
+  display: grid;
   position: fixed;
+  width: 100%;
   z-index: 30;
   border-radius: 0px 0px 30px 30px;
   align-items: stretch;
-  display: flex;
+
+  background-color: ${(props) => (props.activeMenu ? "#f6f6f6" : "#f6f6f6e5")};
 `;
 
 const NavMain = styled.nav`
@@ -23,7 +26,7 @@ const NavMain = styled.nav`
   margin: auto;
   padding: 0 5vw;
   flex-grow: 1;
-  width: auto;
+  width: 100%;
 `;
 
 const NavBrand = styled.div`
@@ -38,7 +41,6 @@ const NavBrand = styled.div`
 `;
 
 const ButtonBurger = styled.button`
-  margin-right: 1vw;
   background-color: transparent;
   border: 0px;
   @media (max-width: 1024px) {
@@ -59,6 +61,10 @@ const CompanyName = styled.p`
   @media (max-width: 1024px) {
     font-size: 16px;
   }
+
+  @media (max-width: 767px) {
+    width: 120px;
+  }
 `;
 
 const NavItems = styled.div`
@@ -66,11 +72,16 @@ const NavItems = styled.div`
   align-items: center;
   flex-grow: 1;
   justify-content: flex-end;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const ButtonBeOur = styled.button`
   font-size: 18px;
   font-weight: 500;
+  margin-left: 1vw;
   color: #ff3600;
   background-color: #f6f6f6e5;
   border-radius: 4px 23.5px 23.5px 45px;
@@ -84,10 +95,12 @@ const ButtonBeOur = styled.button`
     padding: 3px 15px;
     height: 35px;
   }
+
+  display: ${(props) => (props.activSearch ? "none" : "block")};
 `;
 
 const HelpCenter = styled.div`
-  margin-left: 2vw;
+  margin-left: 1vw;
   font-size: 18px;
   font-weight: 500;
   color: #7c8387;
@@ -95,6 +108,7 @@ const HelpCenter = styled.div`
   @media (max-width: 1024px) {
     font-size: 12px;
   }
+  display: ${(props) => (props.activSearch ? "none" : "block")};
 `;
 
 const ButtonLanguage = styled.button`
@@ -102,7 +116,7 @@ const ButtonLanguage = styled.button`
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  margin-left: 2vw;
+  margin-left: 1vw;
   border: 0px;
   font-size: 18px;
   font-weight: 500;
@@ -119,14 +133,16 @@ const ButtonLanguage = styled.button`
       width: 20px;
     }
   }
+  display: ${(props) => (props.activSearch ? "none" : "flex")};
 `;
 
 const Navbar = () => {
   const [isActiveMenu, setIsActiveMenu] = useState(false);
   const [isActiveLanguge, setIsActiveLanguge] = useState(false);
+  const [isActivSearch, setIsActivSearch] = useState(false);
 
   return (
-    <Nav>
+    <Nav activeMenu={isActiveMenu}>
       <NavMain>
         <NavBrand>
           <ButtonBurger onClick={() => setIsActiveMenu(!isActiveMenu)}>
@@ -136,13 +152,19 @@ const Navbar = () => {
           <CompanyName>{"Fira Platform"}</CompanyName>
         </NavBrand>
         <NavItems>
-          <ButtonBeOur>{"Be Our Platform Man"}</ButtonBeOur>
-          <HelpCenter>{"Help Center"}</HelpCenter>
-          <ButtonLanguage onClick={() => setIsActiveLanguge(!isActiveLanguge)}>
+          <ButtonBeOur activSearch={isActivSearch}>
+            {"Be Our Platform Man"}
+          </ButtonBeOur>
+          <HelpCenter activSearch={isActivSearch}>{"Help Center"}</HelpCenter>
+          <ButtonLanguage
+            activSearch={isActivSearch}
+            onClick={() => setIsActiveLanguge(!isActiveLanguge)}
+          >
             <img src={world} alt="" />
             <p>{"English"}</p>
             <img src={arrow} alt="" />
           </ButtonLanguage>
+          <InputSearch state={{ isActivSearch, setIsActivSearch }} />
         </NavItems>
       </NavMain>
       <Menu active={isActiveMenu} />
